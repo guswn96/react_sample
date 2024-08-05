@@ -1,84 +1,118 @@
-import React from "react";
-
+import React from 'react';
 const siteText = [
-  {
-    text: ["make", "site compliant with", "LimHyeonJu"],
-    title: "웹표준을 준수한 웹사이트",
-    code: "/",
-    view: "/",
-    info: [
-      "site coding",
-      "production perriod : 5day",
-      "use stack : HTML5 / CSS3 / SCSS / Javascript /jQuery",
-    ],
-  },
-  {
-    text: ["make", "팀 프로젝트", "무모한 도전"],
-    title: "팀의 합작품",
-    code: "/",
-    view: "/",
-    info: [
-      "site coding",
-      "production perriod : 10day",
-      "use stack : HTML5 / CSS3 / SCSS / Javascript /jQuery",
-    ],
-  },
-  {
-    text: ["make", "1차 포트폴리오", "짜장이네"],
-    title: "나의 첫 작품",
-    code: "/",
-    view: "/",
-    info: [
-      "site coding",
-      "production perriod : 15day",
-      "use stack : HTML5 / CSS3 / SCSS / Javascript /jQuery",
-    ],
-  },
-  {
-    text: ["make", "리디자인", "이름"],
-    title: "내가 입사지원 할 회사 웹페이지",
-    code: "/",
-    view: "/",
-    info: [
-      "site coding",
-      "production perriod : 3day",
-      "use stack : HTML5 / CSS3 / SCSS / Javascript /jQuery",
-    ],
-  },
-];
+    {
+        text: ["Make", "site compliant with", "1차포트폴리오"],
+        title: ["웹표준을 이용한 사이트 제작"],
+        info: ["site coding1", "production period : two days1", "use stack : html5/css3, CSS Variable1, React1"],
+
+    },
+    {
+        text: ["Make", "site compliant with", "팀프로젝트"],
+        title: ["웹접근성 이용한 사이트 제작"],
+        info: ["site coding2", "production period : two days2", "use stack : html5/css3, CSS Variable2, React2"],
+    },
+    {
+        text: ["Make", "site compliant with", "2차 포프롤리오"],
+        title: ["온 정성을 이용한 사이트 제작"],
+        info: ["site coding3", "production period : two days3", "use stack : html5/css3, CSS Variable, React3"],
+    },
+    {
+        text: ["Make", "site compliant with", "내생애 최고 작품"],
+        title: ["리액트를 이용한 사이트 제작"],
+        info: ["site coding4", "production period : two days4", "use stack : html5/css3, CSS Variable, React4"],
+    },
+
+]
 
 const Site = () => {
-  return (
-    <section id="site">
-      <div className="site_inner">
-        <div className="site_title">
-          Site coding <em>나의 작품</em>
-        </div>
-        <div className="site_wrap">
-          {siteText.map((site, key) => (
-            <article className={`site_item s${key+1}`} key={key}>
-              <span className="num">{key+1}.</span>
-              <div className="text">
-                <div>{site.text[0]}</div>
-                <div>{site.text[1]}</div>
-                <div>{site.text[2]}</div>
-              </div>
-              <h3 className="title">{site.title}</h3>
-              <div className="btn">
-                <a href="{site.code}">사이트 바로가기</a>
-                <a href="{site.view}">자세히보기</a>
-              </div>
-              <div className="info">
-                <span>{site.info[0]}</span>
-                <span>{site.info[1]}</span>
-                <span>{site.info[2]}</span>
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
+    return (
+        <section id="site">
+            <div className="site_inner">
+                <h2 className="site_title">
+                    Site coding<em>나의 작업물</em>
+                </h2>
+                <div className="site_wrap">
+                    {siteText.map((site, key) => (
+                        <article className={`site_item s${key + 1}`} key={key} >
+                            <span className="num">{key + 1}.</span>
+                            <div className="text">
+                                <div>{site.text[0]}</div>
+                                <div>{site.text[1]}</div>
+                                <div>{site.text[2]}</div>
 
-export default Site;
+                            </div>
+                            <h3 className="title">{site.title}</h3>
+                            <div className="btn">
+                                <a href="/">code</a>
+                                <a href="/">view</a>
+                            </div>
+                            <div className="info">
+                                <span>{site.info[0]}</span>
+                                <span>{site.info[1]}</span>
+                                <span>{site.info[2]}</span>
+
+                            </div>
+                        </article>
+                    ))}
+
+                    {/* <article className="site_item s2">
+                        <span className="num">2.</span>
+                        <div className="text">
+                            <div></div>
+                            <div></div>
+                            <div>react.js</div>
+                        </div>
+                        <h3 className="title">리액트를 이용한 사이트 제작</h3>
+                        <div className="btn">
+                            <a href="https://github.com/webstoryboy/port2023-react">code</a>
+                            <a href="https://port2023-react.netlify.app/">view</a>
+                        </div>
+                        <div className="info">
+                            <span>site coding</span>
+                            <span>production period : two days</span>
+                            <span>use stack : HTML5/CSS3, CSS Variable, Vite</span>
+                        </div>
+                    </article>
+                    <article className="site_item s3">
+                        <span className="num">3.</span>
+                        <div className="text">
+                            <div>Make</div>
+                            <div>site compliant with</div>
+                            <div>vue.js</div>
+                        </div>
+                        <h3 className="title">뷰를 이용한 사이트 제작</h3>
+                        <div className="btn">
+                            <a href="https://github.com/webstoryboy/port2023-vue">code</a>
+                            <a href="https://port2023-vue.netlify.app/">view</a>
+                        </div>
+                        <div className="info">
+                            <span>site coding</span>
+                            <span>production period : two days</span>
+                            <span>use stack : vue.js, CSS Variable, vite</span>
+                        </div>
+                    </article>
+                    <article className="site_item s4">
+                        <span className="num">4.</span>
+                        <div className="text">
+                            <div>Make</div>
+                            <div>site compliant with</div>
+                            <div>next.js</div>
+                        </div>
+                        <h3>넥스트를 이용한 사이트 제작</h3>
+                        <div className="btn">
+                            <a href="https://github.com/webstoryboy/port2023-next">code</a>
+                            <a href="https://port2023-next.netlify.app/">view</a>
+                        </div>
+                        <div className="info">
+                            <span>site coding</span>
+                            <span>production period : two days</span>
+                            <span>use stack : next.js, CSS Variable, Vite</span>
+                        </div>
+                    </article> */}
+                </div>
+            </div>
+        </section>
+    )
+}
+
+export default Site

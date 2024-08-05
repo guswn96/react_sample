@@ -1,70 +1,68 @@
 import React, { useState } from 'react'
-
 const headerNav = [
     {
-        title : "intro",
-        url : "#intro"
+        title: "intro",
+        url: "#intro"
     },
     {
-        title : "skill",
-        url : "#skill"
+        title: "skill",
+        url: "#skill"
     },
     {
-        title : "site",
-        url : "#site"
+        title: "site",
+        url: "#site"
     },
     {
-        title : "portfolio",
-        url : "#port"
+        title: "portfolio",
+        url: "#port"
     },
     {
-        title : "contact",
-        url : "#contact"
+        title: "contact",
+        url: "#contact"
     },
 ]
 
+
 const Header = () => {
 
-    const [show,setShow] = useState(false);
+    const [show, setShow] = useState(false);
     const toggleMenu = () => {
-        setShow((prevShow) => !prevShow);
+        setShow((prewShow) => !prewShow);
     }
 
-  return (
-    <header id='header' role='banner'>
-        <div className="header_inner">
-            <div className="header_logo">
-                <a href="/">portfolio<em>react</em></a>
-            </div>
-            <div 
-                className={`header_nav ${show ? "show" : ""}`} 
-                role='navigation' 
-                aria-label='메인 메뉴'
-            >
-                <ul>
-                    {
-                        headerNav.map((nav,key)=>(
-                            <li key = {key}>
-                                <a href= {nav.url}>{nav.title}</a>
+    return (
+        <header id='header' role='banner'>
+            <div className="header_inner">
+                <div className="header_logo">
+                    <a href="/">portfolio <em>react</em></a>
+                </div>
+                <div className={`header_nav ${show ? "show" : ""}`}
+                    role='navigation'
+                    aria-label='메인 메뉴'
+                >
+                    <ul>
+                        {headerNav.map((nav, key) => (
+                            <li key={key}>
+                                <a href={nav.url}>{nav.title}</a>
                             </li>
-                        ))
-                    }
-                </ul>
+                        ))}
+
+                    </ul>
+                </div>
+                <div
+                    className="header_nav_moblie"
+                    id='headerToggle'
+                    aria-expanded="false"
+                    aria-controls='primary-menu'
+                    role='button'
+                    tabIndex="0"
+                    onClick={toggleMenu}
+                >
+                    <span></span>
+                </div>
             </div>
-            <div 
-                className="header_nav_moblie"
-                id="headerToggle"
-                aria-controls="primary_menu"
-                aria-expanded="false"
-                role='button'
-                tabIndex="0"
-                onClick= {toggleMenu}
-            >
-                <span></span>
-            </div>
-        </div>
-    </header>
-  )
+        </header>
+    )
 }
 
 export default Header
